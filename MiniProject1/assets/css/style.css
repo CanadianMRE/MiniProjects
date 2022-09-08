@@ -1,0 +1,64 @@
+* {
+    font-family: 'Times New Roman', Times, serif;
+}
+
+body {
+    padding-top: 60px;
+    padding-bottom: 60px;
+    background-color: white;
+    text-align: center;
+    margin: 0px;
+}
+
+header {
+    top: 0;
+    text-align: end;
+}
+
+footer {
+    bottom: 0;
+    text-align: center;
+}
+
+img {
+    height: 400px;
+}
+
+.header {
+    background-color: #606C38;
+    padding: 20px;
+    color: white;
+    position: fixed;
+    width: 98%;
+}
+
+.link {
+    text-decoration: none;
+    padding: 10px;
+    color: white;
+}
+
+.tanborder {
+    border: #DDA15E;
+    border-style: solid;
+}
+
+#contactinput {
+    border-radius: 20px;
+    width: 400px;
+    display: inline-block;
+    padding: 10px;
+}
+
+#contactpage {
+    background-color: #FEFAE0;
+    display: block;
+    padding: 20px;
+}
+
+#sendbutton {
+    color: white;
+    background-color: grey;
+    width: 100px;
+    height: 30px;
+}
