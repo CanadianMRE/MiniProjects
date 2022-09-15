@@ -37,14 +37,14 @@ function GetComputerChoice() {
 function ChooseWinner(playerInput, computerInput) {
     if (playerInput) {
         let playernewinput = converter[playerInput.toLowerCase()]
-        if (playernewinput == computerInput) {
+        if (playernewinput === computerInput) {
             // Equal inputs, its a tie!
             Ties++;
             return [
                 "Tied",
                 computerInput
             ];
-        } else if (choiceer[playernewinput] == computerInput) {
+        } else if (choiceer[playernewinput] === computerInput) {
             // Computer is equal to player's loss input, computer wins
             Losses++;
             return [
@@ -64,7 +64,7 @@ function ChooseWinner(playerInput, computerInput) {
         Losses++;
         return [
             "Lost",
-            computerinput
+            computerInput
         ];
     }
 }
