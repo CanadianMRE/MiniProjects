@@ -2,18 +2,21 @@ let Wins = 0;
 let Losses = 0;
 let Ties = 0;
 
+// Dict to compare 
 let choiceer = {
     "Rock": ["Paper"],
     "Paper": ["Scissors"],
     "Scissors": ["Rock"]
 }
 
-let computerchoices = [
+// Array of choices the computer can make
+let computerChoices = [
     "Rock",
     "Paper",
     "Scissors"
 ]
 
+// Converter to convert player input so we can properly compare to the computer
 let converter = {
     "rock": "Rock",
     "r": "Rock",
@@ -23,36 +26,42 @@ let converter = {
     "s": "Scissors"
 }
 
+// Get a random entry in computerchoices array
 function GetComputerChoice() {
     let keys = Object.keys(choiceer);
     let num = Math.floor(keys.length * Math.random());
-    return computerchoices[num];
+    return computerChoices[num];
 }
 
-function ChooseWinner(playerinput, computerinput) {
-    if (playerinput) {
-        let playernewinput = converter[playerinput.toLowerCase()]
-        if (playernewinput == computerinput) {
-            Ties += 1;
+// Compare computer vs player to find a winner
+function ChooseWinner(playerInput, computerInput) {
+    if (playerInput) {
+        let playernewinput = converter[playerInput.toLowerCase()]
+        if (playernewinput == computerInput) {
+            // Equal inputs, its a tie!
+            Ties++;
             return [
                 "Tied",
-                computerinput
+                computerInput
             ];
-        } else if (choiceer[playernewinput] == computerinput) {
-            Losses += 1;
+        } else if (choiceer[playernewinput] == computerInput) {
+            // Computer is equal to player's loss input, computer wins
+            Losses++;
             return [
                 "Lost",
-                computerinput
+                computerInput
             ];
         } else {
-            Wins += 1;
+            // Its not a tie or a loss, so player wins
+            Wins++;
             return [
                 "Won",
-                computerinput
+                computerInput
             ];
         }
     } else {
-        Losses += 1;
+        // Wrong input, automatic loss
+        Losses++;
         return [
             "Lost",
             computerinput
@@ -60,6 +69,7 @@ function ChooseWinner(playerinput, computerinput) {
     }
 }
 
+// displays the current score
 function DisplayScore() {
     let message = "Wins: "+Wins+"\n";
     message += "Losses: "+Losses+"\n";
@@ -69,21 +79,27 @@ function DisplayScore() {
     window.alert(message);
 }
 
+// Main function for starting and handling the round of rps
 function NewGame() {
-    let userinput = window.prompt("Are you going to play rock, paper or scissors? (R, P, or S)");
+    let userInput = window.prompt("Are you going to play rock, paper or scissors? (R, P, or S)");
     
-    let wininfo = ChooseWinner(userinput, GetComputerChoice());
+    let winInfo = ChooseWinner(userInput, GetComputerChoice());
     
-    let winstatus = wininfo[0]
-    let computerchoice = wininfo[1]
+    let winStatus = winInfo[0];
+    let computerChoice = winInfo[1];
 
-    window.alert("You " + winstatus + "! The computer chose "+computerchoice+"!");
+    window.alert("You " + winStatus + "! The computer chose "+computerChoice+"!");
 
     DisplayScore();
-
-    if (window.confirm("Would you like to play again?")) {
-        NewGame();
-    }
 }
 
-NewGame();
+// Start the game
+while (true) {
+    // If the player wants to play or continue playing rps, ask again
+    if (window.confirm("Would you like to play Rock, Paper, Scissors?")) {
+        NewGame();
+    } else {
+        DisplayScore();
+        break;
+    }
+}
