@@ -69,7 +69,7 @@ function ChooseWinner(playerInput, computerInput) {
     }
 }
 
-// displays the current score
+// Displays the current score
 function DisplayScore() {
     let message = "Wins: "+Wins+"\n";
     message += "Losses: "+Losses+"\n";
@@ -94,10 +94,12 @@ function NewGame() {
 }
 
 // Start the game
+let playAgain = true
 while (true) {
     // If the player wants to play or continue playing rps, ask again
-    if (window.confirm("Would you like to play Rock, Paper, Scissors?")) {
+    if (playAgain) {
         NewGame();
+        playAgain = window.confirm("Would you like to play Rock, Paper, Scissors?")
     } else {
         DisplayScore();
         break;
