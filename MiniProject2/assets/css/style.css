@@ -6,6 +6,11 @@
     --code-font: "consolas";
 }
 
+::selection {
+    background-color: turquoise;
+    color: var(--bg-color);
+}
+
 body {
     text-align: center;
     color: var(--text-color);
@@ -47,7 +52,7 @@ main {
 
 /*CSS for the flexbox elements*/
 .card {
-    flex: 1 0 200px;
+    flex: 1 0 30%;
     padding: 15px;
     margin: 20px;
     text-align: center;
