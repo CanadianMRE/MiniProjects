@@ -1,0 +1,74 @@
+:root {
+ --white: #fff;
+ --black: black;
+ --dark-blue: #15293f;
+ --gradient-yellow-A: #dab47c;
+ --gradient-yellow-B: #e9d888;
+ --gradient-orange-A: #cf8451;
+ --gradient-orange-B: #e5c578;
+}
+
+header {
+    background-color: var(--dark-blue);
+    text-align: center;
+    padding: 20px;
+}
+
+h1 {
+    font-size: 50px;
+    color: var(--white);
+}
+
+main {
+    display: flex;
+}
+
+.bold {
+    font-weight: bold;
+}
+
+.darkGradient {
+    background-image: linear-gradient(to right, var(--gradient-orange-A), var(--gradient-orange-B), var(--gradient-orange-A));
+}
+
+.lightGradient {
+    background-image: linear-gradient(to right, var(--gradient-yellow-A), var(--gradient-yellow-B), var(--gradient-yellow-A));
+}
+
+.backgroundGradient {
+    background-image: linear-gradient(var(--white), var(--dark-blue));
+}
+
+.bevelEdges {
+    border-radius: 5px;
+}
+
+.displayer {
+    width: 45%;
+    margin: 2.5%;
+    height: 300px;
+}
+
+#startButton {
+    width: 100px;
+    height: 40px;
+}
+
+#textDisplay {
+    padding: 20px;
+
+    font-size: 40px;
+
+    justify-content: center;
+    text-align: center;
+}
+
+#infoDisplay {
+    display: flex;
+    padding: 10px;
+}
+
+#timer {
+    background-color: var(--dark-blue);
+    color: var(--white);
+}
