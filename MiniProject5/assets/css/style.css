@@ -1,0 +1,16 @@
+:root {
+    --dark: black;
+    --light: white;
+}
+
+#display-inline {
+    display: flex;
+}
+
+#info-card {
+    width: 20vw;
+}
+
+#display {
+    width: 80vw;
+}
